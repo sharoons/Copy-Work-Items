@@ -15,8 +15,6 @@ This extension allows you to copy work items from one repository to another repo
 
 * Backlog items are imported as backlog items.
 
-* Secured by allowing only Admins to operate
-
 ### Additional Options
 
 * To replace sensitive information
@@ -53,6 +51,6 @@ Very easy to use.
 
 Install on top of RTC Eclipse Client using the following update site
 
-https://raw.githubusercontent.com/sandy081/Copy-Work-Items/master/Update-Site/site.xml
+https://raw.githubusercontent.com/pradeep-b/Copy-Work-Items/master/Update-Site/site.xml
 
 **Pre Requisite** - Rational Team Concert 5.0.2 Client
