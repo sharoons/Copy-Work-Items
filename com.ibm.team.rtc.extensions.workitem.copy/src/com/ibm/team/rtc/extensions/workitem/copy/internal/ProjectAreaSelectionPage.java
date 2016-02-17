@@ -150,7 +150,7 @@ public class ProjectAreaSelectionPage extends WizardPage {
 				} finally {
 					// Override the constraint that user should be a member of
 					// JAZZ_ADMINS
-					fContext.targetContext.isAdmin = true;
+					fContext.targetContext.isAdmin = Boolean.getBoolean("allowNonAdminUsers");
 				}
 				return Status.OK_STATUS;
 			}
