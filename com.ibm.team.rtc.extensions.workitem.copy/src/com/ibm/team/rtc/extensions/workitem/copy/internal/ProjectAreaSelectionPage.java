@@ -148,6 +148,8 @@ public class ProjectAreaSelectionPage extends WizardPage {
 				} catch (TeamRepositoryException e) {
 					fContext.message= e.getMessage();
 				} finally {
+					// Override the constraint that user should be a member of
+					// JAZZ_ADMINS
 					fContext.targetContext.isAdmin = true;
 				}
 				return Status.OK_STATUS;
