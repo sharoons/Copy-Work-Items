@@ -142,9 +142,13 @@ public class ProjectAreaSelectionPage extends WizardPage {
 			@Override
 			public IStatus runInBackground(IProgressMonitor monitor) {
 				try {
-					fContext.targetContext.isAdmin= fContext.targetContext.teamRepository.externalUserRegistryManager().isMember(fContext.targetContext.teamRepository.getUserId(), IPermissionService.JAZZ_ADMINS, new SubProgressMonitor(monitor, 200));
+					fContext.targetContext.isAdmin = fContext.targetContext.teamRepository.externalUserRegistryManager()
+							.isMember(fContext.targetContext.teamRepository.getUserId(), IPermissionService.JAZZ_ADMINS,
+									new SubProgressMonitor(monitor, 200));
 				} catch (TeamRepositoryException e) {
 					fContext.message= e.getMessage();
+				} finally {
+					fContext.targetContext.isAdmin = true;
 				}
 				return Status.OK_STATUS;
 			}
