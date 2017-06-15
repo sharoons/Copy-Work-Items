@@ -147,6 +147,8 @@ public class CopyWorkItemsJob {
 				SubMonitor singleMonitor= preparingMonitor.newChild(1);
 				singleMonitor.setTaskName("Preparing copies " + "(" + counter + " of " + workingCopies.size() + ")");
 				for (IAttribute sourceAttribute : sourceAttributes) {
+					if (sourceAttribute == null)
+						continue;
 					IValueProcessor<Object> processor= (IValueProcessor<Object>)ValueProcessors.getProcessor(sourceAttribute);
 					IAttribute targetAttribute= targetAttributes.findAttribute(sourceAttribute.getIdentifier(), singleMonitor);
 					IWorkItem source= fContext.targetContext.getPair(target.getWorkItem());
